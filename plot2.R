@@ -1,13 +1,13 @@
-#Show comparisons
-#Show causality, mechanism, etc.
-#Show multivariate data
+#getting the data
 
-#use readLines("household_power_consumption.txt",n=10)
-#to determine the structure of the data: i.e. there is a header
-#and the delimiter is ';'
+#create a temporary file and download the dataset
+temp <- tempfile()
+download.file("http://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip",temp)
 
-#use read.delim to read the whole file
-hpc_full <- read.delim(file="household_power_consumption.txt",sep=";",header=TRUE)
+#use read.delim to read the whole file (use unz to unzip it)
+hpc_full <- read.delim(unz(temp, "household_power_consumption.txt"), sep=";", header=TRUE)
+#remove temporary file
+unlink(temp)
 
 #We only want to select the rows with dates 1/2/2007 and 2/2/2007
 hpc_full_sel <- which(hpc_full$Date == "1/2/2007" | hpc_full$Date == "2/2/2007")
