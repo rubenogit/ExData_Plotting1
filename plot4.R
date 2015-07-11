@@ -120,8 +120,8 @@ x <- as.numeric(hpc$DateTime)
 y <- hpc$Global_reactive_power
 
 #x and y label
-xlabel <- ""
-ylabel <- "Global Reactive Power (kilowatts)"
+xlabel <- "datetime"
+ylabel <- "Global_reactive_power"
 
 #labels for x-axis, that contain the day
 label_as <- c("Thu", "Fri", "Sat")
@@ -155,7 +155,7 @@ x <- as.numeric(hpc$DateTime)
 y <- hpc$Voltage
 
 #x and y label
-xlabel <- ""
+xlabel <- "datetime"
 ylabel <- "Voltage"
 
 #labels for x-axis, that contain the day
